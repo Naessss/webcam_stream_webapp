@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실시간 웹캠 스트리밍</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📹 실시간 웹캠 스트리밍</h1>
+        
+        <div class="video-container">
+            <img id="video-feed" src="" alt="웹캠 스트림">
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <span>웹캠을 시작하는 중...</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="start-btn" class="btn btn-primary">
+                🎥 웹캠 시작
+            </button>
+            <button id="stop-btn" class="btn btn-danger" disabled>
+                ⏹️ 웹캠 중지
+            </button>
+        </div>
+
+        <div id="status" class="status stopped">
+            웹캠 상태: 중지됨
+        </div>
+
+        <div id="error-message" class="error-message"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html> 
